@@ -26,12 +26,12 @@ request["x-rapidapi-key"] = '02e66b9f2fmshc40c9abe86ec5dep1cf267jsn78b29265385e'
 request["x-rapidapi-host"] = 'movies-tvshows-data-imdb.p.rapidapi.com'
 
 response = http.request(request)
-puts response.read_body.split(":")
+puts response.read_body
 
 
 
-u1=User.create(name: "Test", password: "123")
-u2=User.create(name:"Test2", password: "123")
+u1=User.create(name: "Test", password: "123", profile_picture: "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10n7ovy_9b42e613.jpeg?region=0,0,450,450", email: "dreedsanders@gmail.com")
+u2=User.create(name:"Test2", password: "123", profile_picture: "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10n7ovy_9b42e613.jpeg?region=0,0,450,450", email: "dreedsanders@gmail.com")
 m1=Movie.create(title: response.read_body.split(":")[1].split(",")[0], description: response.read_body.split(":")[2], year: response.read_body.split(":")[3].split(",")[0], IMDB_rating: response.read_body.split(":")[6].split(",")[0])
 r1=Review.create(review: "man this movie sucked", user_id: u1.id, movie_id: m1.id)
 r2=Review.create(review: "man cked", user_id: u1.id, movie_id: m1.id)
