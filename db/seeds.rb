@@ -2,7 +2,7 @@
 # require 'net/http'
 # require 'openssl'
 
-# url = URI("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-movie-details&imdb=tt2935510")
+# url = URI("http://hackdd.co.uk/random/images")
 
 # http = Net::HTTP.new(url.host, url.port)
 # http.use_ssl = true
@@ -17,13 +17,13 @@
 # m1=Movie.create(title: response.read_body.split(":")[1].split(",")[0], description: response.read_body.split(":")[2], year: response.read_body.split(":")[3].split(",")[0], IMDB_rating: response.read_body.split(":")[6].split(",")[0])
 
 
-
-
 User.destroy_all 
 Movie.destroy_all
 Review.destroy_all
 Response.destroy_all
 MovieWatch.destroy_all
+
+
 
 5.times do
     name = Faker::Name.unique.name
@@ -40,7 +40,7 @@ users = User.all
     description = Faker::Superhero.descriptor 
     year = "1999"
     rating =rand(1..50)
-    poster = Faker::LoremFlickr.colorized_image
+    poster = Faker::LoremFlickr.image
     genres = Faker::Book.genre
     fanart = Faker::LoremFlickr.grayscale_image
     starring = Faker::JapaneseMedia::Naruto.character
@@ -81,7 +81,7 @@ responses=Response.all
     movie_id = movies[rand(1-49)].id
     MovieWatch.create(user_id: user_id, movie_id: movie_id)
 end
-# mw1=MovieWatch.create(user_id: u1.id, movie_id: m1.id)
+mw1=MovieWatch.create(user_id: u1.id, movie_id:  movies[rand(1-49)].id)
 # mw2=MovieWatch.create(user_id: u1.id, movie_id: m1.id)
 # mw3=MovieWatch.create(user_id: u2.id, movie_id: m1.id)
 watches=MovieWatch.all

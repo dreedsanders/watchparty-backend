@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     def logged_in?
-        byebug
+        # byebug
          headers= request.headers["Authorization"]
         token = headers.split(" ")[1]
         user_id = JWT.decode(token, "LordStrings")[0]["user_id"]

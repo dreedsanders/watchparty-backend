@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  # before_action :logged_in?
     wrap_parameters :user, include: [:name, :password, :password_confirmation, :profile_picture, :email]
  
    def index
