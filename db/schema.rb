@@ -26,7 +26,13 @@ ActiveRecord::Schema.define(version: 2021_05_22_170737) do
     t.string "title"
     t.string "description"
     t.string "year"
+    t.string "genres"
     t.integer "IMDB_rating"
+    t.string "poster"
+    t.string "fanart"
+    t.string "starring"
+    t.string "directors"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
