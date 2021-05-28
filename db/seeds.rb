@@ -85,3 +85,5 @@ mw1=MovieWatch.create(user_id: u1.id, movie_id:  movies[rand(1-49)].id)
 # mw2=MovieWatch.create(user_id: u1.id, movie_id: m1.id)
 # mw3=MovieWatch.create(user_id: u2.id, movie_id: m1.id)
 watches=MovieWatch.all
+
+b1=Basket.create(user_id: u1.id)

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :reviews 
       resources :responses
       resources :movie_watches
+      resources :baskets
       post "/login", to: "auth#login"
     end
   end

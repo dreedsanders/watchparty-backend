@@ -8,8 +8,15 @@ class Api::V1::MovieWatchesController < ApplicationController
 
     def create
         # byebug
-        watch = MovieWatch.create(user_id: params[:user_id], movie_id: params[:movie_id])
+        users=User.all
+        movie=Movie.all
+        watches=MovieWatch.all
+        watch = MovieWatch.find_or_create_by(user_id: params[:user_id], movie_id: params[:movie_id])
+        if watch.save 
         render json: watch
+        else
+            render json:{error: "Already in your Watchlist!"}
+        end
     end
 
 
