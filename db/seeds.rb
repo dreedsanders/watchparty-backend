@@ -22,6 +22,7 @@ Movie.destroy_all
 Review.destroy_all
 Response.destroy_all
 MovieWatch.destroy_all
+Chat.destroy_all
 
 
 

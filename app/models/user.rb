@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :movie_watches
     has_many :responses 
     has_many :watchmovies, through: :movie_watches, source: :movie
+    has_many :chats
     validates :name, uniqueness: true
 
 

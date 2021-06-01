@@ -12,5 +12,22 @@ class Api::V1::MoviesController < ApplicationController
         render json: movie
     end
 
+    def fan_fav
+        favorite = Movie.fan_fav
+        render json: favorite
+    end
+
+    def most_talked_about
+        mostreviewed = Movie.most_talked_about
+        render json: mostreviewed 
+    end
+
+    def most_watched 
+        mostwatched = Movie.most_watched
+        render json: mostwatched
+    end 
+
+
+
 
 end
