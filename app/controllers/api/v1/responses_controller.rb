@@ -7,11 +7,11 @@ class Api::V1::ResponsesController < ApplicationController
 
     def create
         # byebug
-        response = Response.create(response: params[:response], user_id: params[:user_id], review_id: params[:review_id])
-        if response.save
-            ResponseMailer.with(response: response).new_response_email.deliver_later
+        @response = Response.create(response: params[:response], user_id: params[:user_id], review_id: params[:review_id])
+        if @response.save
+            ResponseMailer.with(response: @response).new_response_email.deliver_later
         end
-        render json: response
+        render json: @response
     end
 
 

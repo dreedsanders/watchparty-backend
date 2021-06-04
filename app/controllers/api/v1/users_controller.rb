@@ -25,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
    def update
     # byebug
     user=User.find(params[:id])
-    user.update(name: params[:name], password: params[:password], profile_picture: params[:profile_picture], email: params[:email])
+    user.update(user_params)
     render json: user
     end
 

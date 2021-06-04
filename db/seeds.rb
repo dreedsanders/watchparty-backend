@@ -23,6 +23,7 @@ Review.destroy_all
 Response.destroy_all
 MovieWatch.destroy_all
 Chat.destroy_all
+Like.destroy_all
 
 
 
@@ -46,7 +47,6 @@ users = User.all
     fanart = Faker::LoremFlickr.grayscale_image
     starring = Faker::JapaneseMedia::Naruto.character
     directors = Faker::Movies::LordOfTheRings.character
-    likes = rand(1..50)
     Movie.create(title: title, description: description, year: year, IMDB_rating: rating, poster: poster, genres: genres, fanart: fanart, starring: starring, directors: directors, likes: likes)
 end
 movies= Movie.all

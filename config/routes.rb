@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :movie_watches
       resources :baskets
       resources :chats
+      resources :likes
       post "/login", to: "auth#login"
       get "/fanfav", to: "movies#fan_fav"
       get "/mosttalkedabout", to: "movies#most_talked_about"

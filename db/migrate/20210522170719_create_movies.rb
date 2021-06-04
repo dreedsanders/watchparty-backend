@@ -10,7 +10,6 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :fanart
       t.string :starring
       t.string :directors
-      t.integer :likes
 
       t.timestamps
     end
