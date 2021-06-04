@@ -47,7 +47,7 @@ users = User.all
     fanart = Faker::LoremFlickr.grayscale_image
     starring = Faker::JapaneseMedia::Naruto.character
     directors = Faker::Movies::LordOfTheRings.character
-    Movie.create(title: title, description: description, year: year, IMDB_rating: rating, poster: poster, genres: genres, fanart: fanart, starring: starring, directors: directors, likes: likes)
+    Movie.create(title: title, description: description, year: year, IMDB_rating: rating, poster: poster, genres: genres, fanart: fanart, starring: starring, directors: directors)
 end
 movies= Movie.all
 
